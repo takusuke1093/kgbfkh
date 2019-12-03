@@ -4,12 +4,32 @@
     <title>Kgbfkh</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700" rel="stylesheet">
+
   </head>
 
+  <header>
+  <%= link_to 'TOPに戻る', statics_top_path %>
+  <%= link_to '学校を探す', statics_result_path %>
+  <%= link_to '指定の学校に飛ぶ', school_show_path %>
+  <%= link_to '管理人の部屋',school_show_path %>
+  <%= link_to '問い合わせ', school_show_path %>
+  <%= link_to 'ログイン', school_show_path %>
+  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+  <%= link_to "新規登録", new_user_registration_path %>
+  <%= link_to '検索', school_show_path %>
+
+  </header>
+
   <body>
+
+
     <%= yield %>
+
+     <%= form_tag({controller:"comment",action:"index",  class: 'seartch_form'}, method: :get) do %>
+   <%= text_field_tag :search %>
+   <%= submit_tag '検索する'  %>
+ <% end %>
   </body>
 </html>
