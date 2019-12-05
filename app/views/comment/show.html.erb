@@ -1,2 +1,16 @@
 学校ごとのスラックの詳細ページ
 
+
+    <div class="comments">
+      <%= @comment.body %>
+      <%= @comment.created_at %>
+      <%= @comment.user_id %>
+      <%= link_to '詳細',  :controller => "comment", :action => "show", :id => @comment.id %>
+    </div>
+
+
+    <div class="replies">
+    
+
+    </div>
+

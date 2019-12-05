@@ -14,11 +14,18 @@
  *= require_self
  */
 
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
 
  header{
      background-color: #000;
      color: white;
-     display: block;
+     display: flex;
+     align-items: center;
      height: 50px;
      padding-left: 15px;
  }
@@ -35,8 +42,4 @@
      letter-spacing: 0.05em;
 }
 
-.seartch_form{
-    width: 5px;
-    height: 1px;
-}
 

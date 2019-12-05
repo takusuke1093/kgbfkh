@@ -1,6 +1,19 @@
 <h1>検索結果</h1>
+アメリカの検索結果一覧
 
-<%= link_to '指定の学校に飛ぶ', :controller => "school", :action => "show" %>
+<div class="schools-container">
+  <% @schools.each do |school| %>
+    <div class="school">
+      <%= link_to :controller => "school", :action => "show", :id => school.id do %>
+        <%= school.name %>
+      <% end %>
+      <%= school.country_id %>
+    </div>
+  <% end %>
+</div>
+
+
+
 
 
 statics#result

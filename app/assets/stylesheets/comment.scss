@@ -1,3 +1,113 @@
 // Place all the styles related to the comment controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.comments{
+    margin: 30px 30px;
+    padding: 10px;
+    border: medium solid #ff00ff;
+}
+
+.body-class{
+    margin-top: 40px;
+}
+
+#contents{
+    position: relative;
+    padding: 0.25em 1em;
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+    width: 65%;
+    float: left;
+
+
+    
+    li{
+        display: flex;
+        float: left;
+        flex: auto;
+    }
+    
+    &:before, &:after {
+    content: '';
+    position: absolute;
+    top: -7px;
+    width: 2px;
+    height: -webkit-calc(100% + 14px);
+    height: calc(100% + 14px);
+    background-color: black;
+    }
+    &:before {
+    left: 7px;
+    }
+    &:after {
+    right: 7px;
+    }
+}
+
+
+.left-colum{
+    float: left;
+    width: 25%;
+    position: relative;
+    padding: 0.25em 1em;
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+    margin-bottom: 20px;
+
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        top: -7px;
+        width: 2px;
+        height: -webkit-calc(100% + 14px);
+        height: calc(100% + 14px);
+        background-color: black;
+    }
+    &:before {
+        left: 7px;
+    }
+    &:after {
+        right: 7px;
+    }
+
+}
+
+.recommend-block, .login-block, .ad-block,.histry-block{
+    float: left;
+    position: relative;
+    padding: 0.25em 1em;
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+    margin-bottom: 20px;
+
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        top: -7px;
+        width: 2px;
+        height: -webkit-calc(100% + 14px);
+        height: calc(100% + 14px);
+        background-color: black;
+    }
+    &:before {
+        left: 7px;
+    }
+    &:after {
+        right: 7px;
+    }
+
+}
+
+.ad-block{
+    width: 90%;
+    height: 150%;
+    background-color: black;
+    box-align: center;
+    h1{
+        text-align: center;
+        color: white;
+    }
+}
+

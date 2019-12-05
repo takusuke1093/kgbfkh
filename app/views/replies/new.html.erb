@@ -1,0 +1,11 @@
+replies#new
+
+
+<%= form_for(@reply, :url => { controller:'comment', action:'create'})do |reply| %>
+   <%= reply.label :body %>
+   <br>
+   <%= reply.text_field :body,size: 140 %>
+   <br>
+   <%= reply.submit %>
+   <br>
+<% end %>

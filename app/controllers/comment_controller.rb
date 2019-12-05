@@ -4,23 +4,22 @@ class CommentController < ApplicationController
         @comments = Comment.all
     end
     def show
+        @comment = Comment.find(params[:id])
     end
     def new
-        # @comments = body.new
         @comment = Comment.new
     end
 
 #追加箇所
     def create
-        @comments = Comment.new(comment_params)
+        @comment = Comment.new(comment_params)
+        @comment.user_id = current_user.id
+        # @comment.school_id = school_id
 
-        #新しいTweetの保存に成功した場合
-        if @comments.save
-        #index.html.erbにページが移る
+        
+        if @comment.save
         redirect_to action: "index"
-        #新しいTweetの保存に失敗した場合
         else
-        #もう一回投稿画面へ
         redirect_to action: "new"
         end
     end

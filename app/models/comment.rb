@@ -1,2 +1,7 @@
 class Comment < ApplicationRecord
-end
+    has_many :like
+    has_many :reply
+    belongs_to :profile, optional: true
+    belongs_to :school, optional: true
+
+   end
