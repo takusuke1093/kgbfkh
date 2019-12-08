@@ -6,9 +6,9 @@
 <div id="contents">
 <h1>Seattle Central College</h1>
 <ul class="school-function">
-    <li　class="btn-top-radius"><%= link_to 'TOP', school_path(@school_id) %></li>
+    <li　class="btn-top-radius"><%= link_to 'TOP', :controller => "school", :action => "show" %></li>
     <li　class="btn-top-radius">評価</li>
-    <li　class="btn-top-radius"><%= link_to '掲示板', comment_index_path(@school_id) %></li>
+    <li　class="btn-top-radius"><%= link_to '掲示板', comment_show_path(id: @school.id) %></li>
     <li　class="btn-top-radius">授業</li>
     <li　class="btn-top-radius">プログラム</li>
 </ul>
@@ -24,6 +24,8 @@
       <%= link_to '返信', :controller => "replies", :action => "new", :id => comment.id %>
     </div>
   <% end %>
+      <%= link_to 'スラック新規作成はこちら', :controller => "comment", :action => "new" %>
+    <%= link_to 'スラック詳細はこっち', :controller => "comment", :action => "show" %>
 </div>
 
 <div class="left-colum">

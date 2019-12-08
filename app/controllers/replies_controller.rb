@@ -8,18 +8,17 @@ class RepliesController < ApplicationController
         @replies = Replies.find(id: params[:id])
     end
     def new
-        # @replies = Replies.new(comment_id: params[:id])
+        @reply = Reply.new(comment_id: params[:id])
     end
 
 #追加箇所
     def create
-        @replies = Replies.new(reply_params)
-        @comment.user_id = current_user.id
+        @reply = Reply.new(reply_params)
+        @reply.user_id = current_user.id
         # @comment.school_id = school_id
-
         
-        if @replies.save
-        redirect_to action: "index"
+        if @reply.save!
+        redirect_to controller: :comment, action: :index
         else
         redirect_to action: "new"
         end
@@ -27,6 +26,6 @@ class RepliesController < ApplicationController
 
     private
     def reply_params
-        params.require(:replies).permit(:body)
+        params.require(:reply).permit(:body, :comment_id)
     end
 end

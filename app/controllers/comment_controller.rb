@@ -2,9 +2,13 @@ class CommentController < ApplicationController
     before_action :authenticate_user!
     def index
         @comments = Comment.all
+        @school_id = "1"
     end
     def show
         @comment = Comment.find(params[:id])
+        @replies = Reply.all
+        
+        # here(comment_id: params[:id])
     end
     def new
         @comment = Comment.new

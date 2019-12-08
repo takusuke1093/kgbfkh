@@ -1,16 +1,27 @@
-学校ごとのスラックの詳細ページ
+スラックの詳細ページ
 
 
-    <div class="comments">
-      <%= @comment.body %>
-      <%= @comment.created_at %>
-      <%= @comment.user_id %>
-      <%= link_to '詳細',  :controller => "comment", :action => "show", :id => @comment.id %>
-    </div>
+<div class="comments">
+  <%= @comment.body %>
+  <%= @comment.created_at %>
+  <%= @comment.user_id %>
+  <%= link_to '詳細',  :controller => "comment", :action => "show", :id => @comment.id %>
+  <%= link_to '返信', :controller => "replies", :action => "new", :id => @comment.id %>
+
+</div>
 
 
-    <div class="replies">
-    
+<div class="replies">
+  <% @replies.each do |reply| %>
+  <div class="reply">
+    <%= reply.body %>
+    <%= reply.created_at %>
+    <%= reply.user_id %>
+  </div>
+      <%# <%= link_to '詳細',  :controller => "comment", :action => "show", :id => @comment.id %> 
+      <%# <%= link_to '返信', :controller => "replies", :action => "new", :id => @comment.id %>
+  <% end %>
 
-    </div>
+
+</div>
 

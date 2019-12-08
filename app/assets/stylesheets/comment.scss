@@ -9,6 +9,18 @@
     border: medium solid #ff00ff;
 }
 
+.replies{
+    margin: 30px 30px;
+    padding: 10px;
+    border: medium solid #00ff00;
+    .reply{
+        margin: 30px 30px;
+        padding: 10px;
+        border: medium solid #00fff0;
+
+    }
+}
+
 .body-class{
     margin-top: 40px;
 }
