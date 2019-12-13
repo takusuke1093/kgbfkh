@@ -13,8 +13,8 @@
 <ul class="school-function">
     <li　class="btn-top-radius"><%= link_to 'TOP', :controller => "school", :action => "show" %></li>
     <li　class="btn-top-radius">評価</li>
-    <li　class="btn-top-radius"><%= link_to '掲示板', comment_index_path(id: @school.id) %></li>
-    <li　class="btn-top-radius">授業</li>
+    <li　class="btn-top-radius"><%= link_to '掲示板', school_comment_index_path(school_id: @school.id) %></li>
+    <li　class="btn-top-radius"><%= link_to '授業', school_class_index_path(school_id: @school.id) %></li>
     <li　class="btn-top-radius">プログラム</li>
 </ul>
 

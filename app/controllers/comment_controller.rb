@@ -1,30 +1,34 @@
 class CommentController < ApplicationController
     before_action :authenticate_user!
     def index
-        @comments = Comment.all
-        @school_id = "1"
+        @comments = Comment.where(school_id: params[:school_id])
+        @comment = Comment.new
+        @school = School.find(params[:school_id])
     end
     def show
         @comment = Comment.find(params[:id])
-        @replies = Reply.all
+        @replies = Reply.where(comment_id: params[:comment_id])
         
         # here(comment_id: params[:id])
     end
-    def new
-        @comment = Comment.new
-    end
+    # def new
+    #     @comment = Comment.new
+    #     redirect_to action: "index"
+    # end
 
 #追加箇所
     def create
         @comment = Comment.new(comment_params)
         @comment.user_id = current_user.id
-        # @comment.school_id = school_id
+        @comment.school_id = params[:school_id]
 
         
         if @comment.save
+        flash[:success] = "コメントを投稿しました"
         redirect_to action: "index"
         else
-        redirect_to action: "new"
+        flash[:success] = "投稿できませんでした"
+        # redirect_to action: "new"
         end
     end
 

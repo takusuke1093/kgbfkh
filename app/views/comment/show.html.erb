@@ -5,8 +5,9 @@
   <%= @comment.body %>
   <%= @comment.created_at %>
   <%= @comment.user_id %>
-  <%= link_to '詳細',  :controller => "comment", :action => "show", :id => @comment.id %>
-  <%= link_to '返信', :controller => "replies", :action => "new", :id => @comment.id %>
+  <%= link_to '詳細',  school_comment_path(comment_id: @comment.id)  %>
+  <%= link_to '返信', new_school_comment_reply_path(comment_id: @comment.id) %>
+  
 
 </div>
 

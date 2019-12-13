@@ -1,15 +1,15 @@
 replies#new
 
+<p>You are trying to reply_to :</p>
 
-<%= form_for(@reply, :url => { controller:'replies', action:'create'})do |reply| %>
-   <%= reply.label :body %>
+<%= @comment.id %>
+<%= @school.id %>
+
+<%= form_for [@school, @comment, @reply],url: school_comment_replies_path do |reply| %>
    <br>
    <%= reply.text_field :body,size: 140 %>
    <br>
    <%= reply.submit %>
    <br>
 <% end %>
-
-
-
 

@@ -1,14 +1,26 @@
-<h1>検索結果</h1>
+<h3>学校一覧</h3>
+
+
+
+
+
+
+
+
+
+
+<h3>国</h3>
+
+
 
 <div class="search">
-<h1>学校を探す</h1>
 <div class="country-container">
   <% @countries.each do |country| %>
   <div class="country">
-    <%= link_to :controller => "statics", :action => "result", :country_id => country.country_id do %>
+    <li><%= link_to :controller => "statics", :action => "result", :country_id => country.id do %>
     <%= country.name %>
   <% end %>
-    <%= country.iso_code %>
+  </li>
     </div>
   <% end %>
 </div>
