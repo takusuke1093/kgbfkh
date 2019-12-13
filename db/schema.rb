@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_13_084227) do
+ActiveRecord::Schema.define(version: 2019_12_13_093805) do
 
   create_table "comments", force: :cascade do |t|
     t.text "body"
@@ -24,6 +24,19 @@ ActiveRecord::Schema.define(version: 2019_12_13_084227) do
     t.string "name"
     t.string "iso_code"
     t.string "language"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "evaluations", force: :cascade do |t|
+    t.text "name"
+    t.integer "user_id"
+    t.integer "school_id"
+    t.integer "meaningfulness"
+    t.integer "ease"
+    t.integer "textbook"
+    t.string "test_information"
+    t.string "other_information"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
