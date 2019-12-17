@@ -1,4 +1,5 @@
 class CommentController < ApplicationController
+    layout "school_layout"
     before_action :authenticate_user!
     def index
         @comments = Comment.where(school_id: params[:school_id])
@@ -28,15 +29,12 @@ class CommentController < ApplicationController
         redirect_to action: "index"
         else
         flash[:success] = "投稿できませんでした"
-        # redirect_to action: "new"
         end
     end
 
     private
-    #セキュリティのため、許可した:bodyというデータだけ取ってくるようにする
     def comment_params
         params.require(:comment).permit(:body)
     end
-  #ここまで
 
 end

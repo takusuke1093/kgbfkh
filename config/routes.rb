@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :api do
+    get 'school_actions/show'
+  end
   devise_for :user
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
@@ -6,8 +9,6 @@ Rails.application.routes.draw do
   # resources :statics, only: [:index, :create, :new, :show, :destroy]
   root 'statics#top'
   get 'statics/top' => 'statics#top'
-  get 'statics/result/:country_id' => 'statics#result'
-  get 'statics/result' => 'statics#result'
 
   #school  #comment  #replies
   resources :school, only: [:index, :show] do
@@ -15,6 +16,7 @@ Rails.application.routes.draw do
       resources :replies, only: [:index, :create, :new, :show, :destroy]
     end
     resources :class, only: [:index, :create, :new, :show, :destroy] 
+    resources :evaluation, only: [:index, :create, :new, :show, :destroy] 
   end
 
 

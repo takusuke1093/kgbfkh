@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2019_12_13_093805) do
     t.string "name"
     t.string "iso_code"
     t.string "language"
+    t.string "japanese_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

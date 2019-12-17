@@ -12,19 +12,32 @@
 <h3>国</h3>
 
 
+<div class="container-fluid" style="background: skyblue;font-size:20px;">
+<div class="row">
 
-<div class="search">
-<div class="country-container">
+
   <% @countries.each do |country| %>
-  <div class="country">
-    <li><%= link_to :controller => "statics", :action => "result", :country_id => country.id do %>
+    <div class="col-xs-12 col-sm-6 col-md-6" style="background:orange">
+    <%= image_tag country.name + '.png', :size =>'60x40' %>
+<%= link_to :controller => "statics", :action => "result", :country_id => country.id do %>
     <%= country.name %>
+        </div>
   <% end %>
-  </li>
+  <% end %>
+</div>
+</div>
     </div>
-  <% end %>
-</div>
-</div>
+
+
+
+
+
+
+
+
+
+
+
 
 
 <div class="schools-container">
@@ -37,3 +50,5 @@
     </div>
   <% end %>
 </div>
+
+

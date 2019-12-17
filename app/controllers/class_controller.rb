@@ -1,4 +1,5 @@
 class ClassController < ApplicationController
+    layout "school_layout"
     def index
         @evaluations = Evaluation.where(school_id: params[:school_id])
         @school = School.find(params[:school_id])
