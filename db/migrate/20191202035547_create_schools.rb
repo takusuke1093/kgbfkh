@@ -17,3 +17,4 @@ end
 
 #School.create(name:"Seattle Central College",country_id:"1",school_type:"College",link:"https://seattlecentral.edu/",abbreviation:"SCC")
 #School.create(name:"University of Washington",country_id:"1",school_type:"University",link:"https://www.washington.edu/",abbreviation:"UW")
+#School.create(name:"Sunway University",country_id:"4",school_type:"University",link:"https://university.sunway.edu.my/",abbreviation:"SW")

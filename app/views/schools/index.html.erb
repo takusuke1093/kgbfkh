@@ -9,7 +9,7 @@
         <div class="schools-container">
           <% country.school.each do |school| %>
             <div class="school">
-              <%= link_to 'gakko', school_path(school.id) %>
+              <%= link_to 'gakko', school_toppages_path(school_id: school.id) %>
               <%= school.name %>
               <%= school.country_id %>
             </div>

@@ -1,5 +1,5 @@
-class CommentController < ApplicationController
-    layout "schools_layout"
+class Schools::CommentsController < ApplicationController
+    layout "school_layout"
     before_action :authenticate_user!
     def index
         @comments = Comment.where(school_id: params[:school_id])
@@ -9,7 +9,7 @@ class CommentController < ApplicationController
     def show
         @comment = Comment.find(params[:id])
         @replies = Reply.where(comment_id: params[:comment_id])
-        
+
         # here(comment_id: params[:id])
     end
     # def new
@@ -23,7 +23,6 @@ class CommentController < ApplicationController
         @comment.user_id = current_user.id
         @comment.school_id = params[:school_id]
 
-        
         if @comment.save
         flash[:success] = "コメントを投稿しました"
         redirect_to action: "index"
