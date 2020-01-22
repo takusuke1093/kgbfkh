@@ -3,14 +3,18 @@ class CreateCountries < ActiveRecord::Migration[6.0]
     create_table :countries do |t|
       t.string :name
       t.string :iso_code
-      t.integer :country_id
       t.string :language
+      t.string :japanese_name
       t.timestamps
     end
   end
 end
 
 
-# Country.create(name:"America”,country_id:”1”,iso_code:”USA”,language:"English")
-# Country.create(name:”Canada”,country_id:”2”,iso_code:”CAN”,language:"English")
-# Country.create(name:”China”,country_id:”3”,iso_code:"CHN",language:"Chinese")
+# Country.create(name:"America",iso_code:"USA",japanese_name:"アメリカ",language:"English")
+# Country.create(name:"Australia",iso_code:"AUS",japanese_name:"オーストラリア",language:"English")
+# Country.create(name:"United_Kingdom",iso_code:"GBR",japanese_name:"イギリス",language:"English")
+# Country.create(name:"Malaysia",iso_code:"MYS",japanese_name:"マレーシア",language:"English")
+
+
+

@@ -1,0 +1,24 @@
+<%= form_for [@school, @evaluation],url: school_class_index_path do |f| %>
+  科目名：<%= f.text_field :name,size: 70 %><br>
+  内容充実度<%= f.text_field :meaningfulness,size: 70 %><br>
+  楽単<%= f.text_field :ease,size: 70 %><br>
+  教科書<%= f.text_field :textbook,size: 70 %><br>
+  テスト<%= f.text_field :test_information,size: 70 %><br>
+  全体的な評価<%= f.text_field :other_information,size: 70 %><br>
+  <br>
+  <%= f.submit %>
+<% end %>
+
+<% @evaluations.each do |evaluation| %>
+  <div class="comments">
+  科目名：<%= evaluation.name %><br>
+  内容充実度：<%= evaluation.meaningfulness %><br>
+  楽単：<%= evaluation.ease %><br>
+  教科書：<%= evaluation.textbook %><br>
+  テスト：<%= evaluation.test_information %>
+  <br><%= evaluation.other_information %>
+  <br>
+    <%= evaluation.created_at %>
+    <%= evaluation.user_id %>
+  </div>
+<% end %>

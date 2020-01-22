@@ -54,5 +54,16 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
+<<<<<<< HEAD
 gem 'rspec-rails'
 gem 'factory_bot_rails'
+=======
+
+gem 'carrierwave'
+
+
+group :development do #開発環境のみ
+  gem 'letter_opener_web'
+end
+
+>>>>>>> 71f6da248ef8c33195537f7df7e7f5e645ef6f07

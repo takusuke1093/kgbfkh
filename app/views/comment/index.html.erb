@@ -1,69 +1,22 @@
-<h1>学校ごとのスラック表示ページ</h1>
+<%= form_for [@school, @comment],url: school_comment_index_path do |f| %>
+  <br>
+  <%= f.text_field :body,size: 70 %>
+  <br>
+  <%= f.submit %>
+  <br>
+<% end %>
+
+<% @comments.each do |comment| %>
+  <div class="comments">
+    <%= comment.body %>
+    <br>
+    <%= comment.created_at %>
+    <%= comment.user_id %>
+    <%= link_to '詳細', school_comment_path(id: comment.id) %>
+    <%= link_to '返信', new_school_comment_reply_path(comment_id: comment.id) %>
+  </div>
+<% end %>
 
 
-
-<div class="body-class">
-<div id="contents">
-<h1>Seattle Central College</h1>
-<ul class="school-function">
-    <li　class="btn-top-radius"><%= link_to 'TOP', :controller => "school", :action => "show" %></li>
-    <li　class="btn-top-radius">評価</li>
-    <li　class="btn-top-radius"><%= link_to '掲示板', :controller => "comment", :action => "show" %></li>
-    <li　class="btn-top-radius">授業</li>
-    <li　class="btn-top-radius">プログラム</li>
-</ul>
-
-
-
-  <% @comments.each do |comment| %>
-    <div class="comments">
-      <%= comment.body %>
-      <%= comment.created_at %>
-      <%= comment.user_id %>
-      <%= link_to '詳細', :controller => "comment", :action => "show", :id => comment.id %>
-      <%= link_to '返信', :controller => "replies", :action => "new", :id => comment.id %>
-    </div>
-
-
-  <% end %>
-      <%= link_to 'スラック新規作成はこちら', :controller => "comment", :action => "new" %>
-    <%= link_to 'スラック詳細はこっち', :controller => "comment", :action => "show" %>
-</div>
-
-<div class="left-colum">
-
-<div class="login-block">
-    <h3>ログイン/会員登録</h3>
-    <p>留学生向けの総合サイトです！</p>
-    <p>よかったら登録してって掲示板とか見てみてね〜</p>
-</div>
-
-<div class="ad-block">
-    <h1>広告</h1>
-</div>
-
-<div class="histry-block">
-    <h3>閲覧履歴</h3>
-    <ul>
-    <li><p>アメリカのご飯はおいしくない？！</p></li>
-    <li><p>留学の手続きを自分でしてみよう！</p></li>
-</div>
-
-<div class="recommend-block">
-    <h3>オススメ記事はこちら</h3>
-    <ul>
-    <li><p>留学#とは</p></li>
-    <li><p>管理人オススメの留学エージェント</p></li>
-</div>
-
-
-
-
-
-
-
-</div>
-
-</div>
 
 

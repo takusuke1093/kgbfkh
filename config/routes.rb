@@ -1,23 +1,38 @@
 Rails.application.routes.draw do
+  namespace :api do
+    get 'school_actions/show'
+  end
   devise_for :user
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  #statics
+  # resources :statics, only: [:index, :create, :new, :show, :destroy]
   root 'statics#top'
   get 'statics/top' => 'statics#top'
-  get 'statics/result/:country_id' => 'statics#result'
 
-  # get 'statics/result/:id' => 'statics#result'
-  get 'statics/result' => 'statics#result'
+  #school  #comment  #replies
+  resources :school, only: [:index, :show] do
+    resources :comment, only: [:index, :create, :new, :show, :destroy] do
+      resources :replies, only: [:index, :create, :new, :show, :destroy]
+    end
+    resources :class, only: [:index, :create, :new, :show, :destroy] 
+    resources :evaluation, only: [:index, :create, :new, :show, :destroy] 
+  end
 
-  get 'school/show' => 'school#show'
 
-  get 'comment/show/:id' => 'comment#show'
-  get 'comment/show' => 'comment#show'
-  get 'comment/new' => 'comment#new'
-  get 'comment/index' => 'comment#index'
-  post 'comment/index' => 'comment#create'
-  get 'replies/new/:id' => 'replies#new'
 
-  get 'replies/new' => 'replies#new'
+
+  resources :profile, only: [:index, :create, :new, :show] do
+    resources :users, only: [:show]
+  end
+
+
+
+
+  if Rails.env.development? #開発環境の場合
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
+
 
 
 end

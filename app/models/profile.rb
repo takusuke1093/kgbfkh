@@ -1,5 +1,4 @@
 class Profile < ApplicationRecord
-    has_many :like
-    has_many :comment
-    has_many :reply
+    has_many :likes
+    has_many :comments
 end

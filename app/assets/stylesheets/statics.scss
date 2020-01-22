@@ -1,7 +1,19 @@
 // Place all the styles related to the statics controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.search{
-    border: solid 2px black;
-    width: 30%;
+
+.top-wrapper{
+    background-image: url("AdobeStock_164778795.jpg");
+    width: 100%;
+    max-width: 100%; /* 画像幅以上拡大しないようにする指定 */
+    background-size: cover;
+    h1{
+        padding-top: 20%;
+        color:white;
+    }
+    p{
+        padding-top:5%;
+        padding-bottom:50%;
+        color: white;
+    }
 }

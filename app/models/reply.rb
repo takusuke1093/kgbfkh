@@ -1,5 +1,5 @@
 class Reply < ApplicationRecord
-    belongs_to :profile
     belongs_to :comment
-
 end
+
+#TODO ユーザーでいくかprofileで行くか確認
