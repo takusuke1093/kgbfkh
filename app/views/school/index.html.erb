@@ -10,11 +10,9 @@
     <%= image_tag country.name + '.png', :size =>'60x40' %>
     <%= country.name %>
     <div class="schools-container">
-  <% @schools.each do |school| %>
+  <% country.school.each do |school| %>
     <div class="school">
-      <%= link_to :controller => "school", :action => "show", :id => school.id do %>
         <%= school.name %>
-      <% end %>
       <%= school.country_id %>
     </div>
   <% end %>
@@ -24,7 +22,3 @@
 </div>
 </div>
     </div>
-
-
-
-
