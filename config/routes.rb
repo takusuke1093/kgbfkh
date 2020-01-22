@@ -28,11 +28,4 @@ Rails.application.routes.draw do
 
 
 
-
-  if Rails.env.development? #開発環境の場合
-    mount LetterOpenerWeb::Engine, at: "/letter_opener"
-  end
-
-
-
 end
